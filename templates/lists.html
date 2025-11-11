@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}lists{% endblock %}
+{% block content %}
+<div class="container row gap-3">
+  {% for blog in blogs %}
+      <div class="card" style="width: 18rem;background-color:rgb(13, 13, 33)">
+        <a style="text-decoration: none;color:rgb(244, 225, 225);" href="{% url 'detail' blog.slug %}">
+        <img style="height: 6cm;" src="{{blog.image.url }}" class="card-img-top" alt="...">
+       <div class="card-body">
+         <h5 class="card-title">{{blog.title}}</h5>
+          <p class="card-text">{{blog.description|truncatechars:100}} </p>
+       </div>
+       </a>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
