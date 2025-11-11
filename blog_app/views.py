@@ -16,3 +16,9 @@ class detail(View):
     def get(self,request,slug,*args, **kwargs):
         blog=Blog.objects.get(slug=slug)
         return render(request,'detail.html',{'blog':blog})
+    
+
+
+
+def myfun(req):
+    print("hi")
